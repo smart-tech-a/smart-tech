@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Enterprise technology solutions for secure, scalable digital transformation. Cloud infrastructure, cybersecurity, data analytics, and AI solutions.">
+    <title>Smart Tech - Enterprise Technology Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      :root {
+        --primary: #1a365d;
+        --primary-light: #2c5282;
+        --accent: #3182ce;
+        --accent-light: #4299e1;
+        --light: #f7fafc;
+        --dark: #1a202c;
+        --text: #2d3748;
+        --gray: #e2e8f0;
+        --bg: #ffffff;
+        --text-color: #1a202c;
+        --card-bg: #ffffff;
+        --header-bg: #ffffff;
+        --border-color: #e2e8f0;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+        --radius: 8px;
+      }
+
+      [data-theme="dark"] {
+        --bg: #1a202c;
+        --text-color: #f7fafc;
+        --card-bg: #2d3748;
+        --header-bg: #1a202c;
+        --border-color: #4a5568;
+        --feature-text: #e2e8f0;
+        --stat-text: #cbd5e0;
+        --footer-text: #a0aec0;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: var(--bg);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        overflow-x: hidden;
+      }
+
+      body[dir="rtl"] {
+        direction: rtl;
+        text-align: right;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Accessibility focus styles */
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* Skip to content link */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--primary);
+        color: white;
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Animation classes */
+      [data-aos] {
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      [data-aos="fade-up"] {
+        transform: translateY(30px);
+      }
+
+      [data-aos="fade-down"] {
+        transform: translateY(-30px);
+      }
+
+      [data-aos="fade-left"] {
+        transform: translateX(-30px);
+      }
+
+      [data-aos="fade-right"] {
+        transform: translateX(30px);
+      }
+
+      [data-aos="zoom-in"] {
+        transform: scale(0.9);
+      }
+
+      [data-aos].aos-animate {
+        opacity: 1;
+        transform: translate(0) scale(1);
+      }
+
+      /* Layout components */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+
+      /* Header styles */
+      header {
+        background-color: var(--header-bg);
+        color: var(--text-color);
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow-sm);
+        border-bottom: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+      }
+
+      .logo-img {
+        height: 2.5rem;
+        width: auto;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin: 0;
+      }
+
+      .logo-text span {
+        color: var(--accent);
+      }
+
+      /* Navigation */
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      body[dir="rtl"] nav ul li {
+        margin-left: 0;
+        margin-right: 1.5rem;
+      }
+
+      nav ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+        position: relative;
+      }
+
+      nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        transition: width 0.3s;
+      }
+
+      nav ul li a:hover::after,
+      nav ul li a:focus::after {
+        width: 100%;
+      }
+
+      nav ul li a:hover {
+        color: var(--accent);
+      }
+
+      /* Mobile menu toggle */
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Controls */
+      .controls {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: var(--text-color);
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+      }
+
+      .theme-toggle:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      [data-theme="dark"] .theme-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .dark-icon {
+        display: none;
+      }
+
+      [data-theme="dark"] .light-icon {
+        display: none;
+      }
+
+      [data-theme="dark"] .dark-icon {
+        display: block;
+      }
+
+      .language-selector {
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid var(--border-color);
+        background-color: var(--bg);
+        color: var(--text-color);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .language-selector:hover {
+        border-color: var(--accent);
+      }
+
+      /* Hero section */
+      .hero {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: white;
+        padding: 10rem 0 6rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+        background-size: 50px 50px;
+        opacity: 0.1;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        position: relative;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        opacity: 0.9;
+        position: relative;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      /* Button styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--accent);
+        color: white;
+        padding: 0.9rem 2.2rem;
+        border-radius: var(--radius);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        gap: 0.5rem;
+      }
+
+      .btn:hover {
+        background-color: var(--accent-light);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+      }
+
+      /* Features section */
+      .features {
+        padding: 6rem 0;
+        background-color: var(--light);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      body[dir="rtl"] .section-title h2::after {
+        left: auto;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .section-title p {
+        color: var(--text);
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background: var(--card-bg);
+        padding: 2.5rem 2rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .feature-card p {
+        color: var(--text);
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .feature-link {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: auto;
+      }
+
+      .feature-link i {
+        transition: transform 0.3s;
+      }
+
+      .feature-link:hover i {
+        transform: translateX(3px);
+      }
+
+      body[dir="rtl"] .feature-link:hover i {
+        transform: translateX(-3px);
+      }
+
+      /* About section */
+      .about {
+        padding: 6rem 0;
+        background-color: var(--bg);
+        position: relative;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-image {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.03);
+      }
+
+      .about-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+        z-index: 1;
+      }
+
+      .about-text h2 {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: var(--card-bg);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .stat-number {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--text);
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* CTA section */
+      .cta {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: white;
+        padding: 5rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: pulse 15s infinite linear;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .cta .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      .cta p {
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
+
+      .footer-column h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--accent);
+      }
+
+      body[dir="rtl"] .footer-column h3::after {
+        left: auto;
+        right: 0;
+      }
+
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-column ul li a {
+        color: #cbd5e0;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .footer-column ul li a:hover {
+        color: white;
+      }
+
+      .footer-column ul li a i {
+        font-size: 0.8rem;
+      }
+
+      .footer-column p {
+        color: #cbd5e0;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        text-decoration: none;
+      }
+
+      .footer-logo-img {
+        height: 2rem;
+        width: auto;
+      }
+
+      .footer-logo-text {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+      }
+
+      .footer-logo-text span {
+        color: var(--accent);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-links a {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        background-color: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #a0aec0;
+        font-size: 0.9rem;
+      }
+
+      .copyright a {
+        color: #cbd5e0;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .copyright a:hover {
+        color: white;
+      }
+
+      /* Dark mode specific styles */
+      [data-theme="dark"] .about-text p {
+        color: var(--feature-text);
+      }
+
+      [data-theme="dark"] .feature-card p {
+        color: var(--feature-text);
+      }
+
+      [data-theme="dark"] .stat-label {
+        color: var(--stat-text);
+      }
+
+      [data-theme="dark"] .footer-column p,
+      [data-theme="dark"] .footer-column ul li a,
+      [data-theme="dark"] .copyright {
+        color: var(--footer-text);
+      }
+
+      [data-theme="dark"] {
+        --feature-text: #e2e8f0;
+        --stat-text: #cbd5e0;
+        --footer-text: #a0aec0;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 992px) {
+        .about-content {
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        section {
+          padding: 4rem 0;
+        }
+
+        .hero {
+          padding: 8rem 0 4rem;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+
+        .about-image {
+          order: -1;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background-color: var(--header-bg);
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          transition: right 0.3s ease;
+          padding: 5rem 2rem 2rem;
+          z-index: 1000;
+        }
+
+        body[dir="rtl"] nav {
+          right: auto;
+          left: -100%;
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.active {
+          right: 0;
+        }
+
+        body[dir="rtl"] nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5rem;
+        }
+
+        body[dir="rtl"] nav ul {
+          align-items: flex-end;
+        }
+
+        nav ul li {
+          margin: 0;
+        }
+
+        .controls {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-top: 2rem;
+        }
+
+        body[dir="rtl"] .controls {
+          align-items: flex-end;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .btn-outline {
+          margin: 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .cta h2 {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* Loading animation */
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s, visibility 0.5s;
+      }
+
+      .loading.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px solid var(--accent);
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
+
+    <!-- Skip to content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+      <div class="header-container container">
+        <a href="#" class="logo-container" aria-label="Smart Tech Home">
+          <img src="logo.svg" alt="Smart Tech Logo" class="logo-img" width="40" height="40" />
+          <h1 class="logo-text">Smart<span>Tech</span></h1>
+        </a>
+        
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav>
+          <ul>
+            <li><a href="#" id="menu_home">Home</a></li>
+            <li><a href="#services" id="menu_services">Services</a></li>
+            <li><a href="#solutions" id="menu_solutions">Solutions</a></li>
+            <li><a href="#about" id="menu_about">About</a></li>
+            <li><a href="#contact" id="menu_contact">Contact</a></li>
+            <li>
+              <div class="controls">
+                <select id="languageSelect" class="language-selector" aria-label="Select language">
+                  <option value="en">English</option>
+                  <option value="ar">العربية</option>
+                </select>
+                <button
+                  id="themeToggle"
+                  class="theme-toggle"
+                  aria-label="Toggle dark mode"
+                >
+                  <span class="light-icon"><i class="fas fa-sun"></i></span>
+                  <span class="dark-icon"><i class="fas fa-moon"></i></span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" data-aos="fade-up">
+        <div class="container">
+          <h1 id="hero_title">Enterprise Technology Solutions</h1>
+          <p id="hero_text">
+            Smart Tech delivers secure, scalable technology infrastructure and
+            digital transformation services for forward-thinking organizations.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn" id="cta_consultation">
+              <i class="fas fa-calendar-alt"></i> Request Consultation
+            </a>
+            <a href="#services" class="btn btn-outline" id="cta_services">
+              <i class="fas fa-search"></i> Explore Services
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="services">
+        <div class="container">
+          <div class="section-title">
+            <h2 id="services_title">Our Technology Services</h2>
+            <p id="services_subtitle">
+              Comprehensive solutions designed to meet the unique challenges of
+              modern enterprises
+            </p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+              <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+              <h3 id="service1_title">Enterprise Software</h3>
+              <p id="service1_text">
+                Custom-built applications tailored to your business processes
+                and workflow requirements.
+              </p>
+              <a href="#" class="feature-link" id="service1_link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-icon"><i class="fas fa-cloud"></i></div>
+              <h3 id="service2_title">Cloud Infrastructure</h3>
+              <p id="service2_text">
+                Secure, scalable cloud solutions with 99.99% uptime and
+                enterprise-grade reliability.
+              </p>
+              <a href="#" class="feature-link" id="service2_link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+              <h3 id="service3_title">Cybersecurity</h3>
+              <p id="service3_text">
+                End-to-end security solutions including threat detection,
+                prevention, and response.
+              </p>
+              <a href="#" class="feature-link" id="service3_link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+              <h3 id="service4_title">Data Analytics</h3>
+              <p id="service4_text">
+                Turn complex data into actionable business intelligence with our
+                advanced analytics platform.
+              </p>
+              <a href="#" class="feature-link" id="service4_link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="feature-icon"><i class="fas fa-robot"></i></div>
+              <h3 id="service5_title">AI & Automation</h3>
+              <p id="service5_text">
+                Implement intelligent automation to streamline operations and
+                reduce costs.
+              </p>
+              <a href="#" class="feature-link" id="service5_link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+              <h3 id="service6_title">Digital Transformation</h3>
+              <p id="service6_text">
+                Comprehensive strategy and implementation for your
+                organization's digital future.
+              </p>
+              <a href="#" class="feature-link" id="service6_link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+              <h2 id="about_title">About Smart Tech</h2>
+              <p id="about_text1">
+                Founded in 2010, Smart Tech has established itself as a trusted
+                partner for enterprise technology solutions, serving Fortune 500
+                companies and government agencies worldwide.
+              </p>
+              <p id="about_text2">
+                Our team of certified engineers, architects, and consultants
+                bring decades of combined experience delivering mission-critical
+                technology infrastructure.
+              </p>
+              <p id="about_text3">
+                Smart Tech is proud to maintain partnerships with leading
+                technology providers including AWS, Microsoft, Google Cloud, and
+                Cisco.
+              </p>
+
+              <div class="stats">
+                <div class="stat-item" data-aos="fade-up">
+                  <div class="stat-number">200+</div>
+                  <div class="stat-label" id="stat1_label">
+                    Enterprise Clients
+                  </div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                  <div class="stat-number">99.9%</div>
+                  <div class="stat-label" id="stat2_label">Uptime SLA</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label" id="stat3_label">Support</div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                alt="Smart Tech team in meeting"
+                width="500"
+                height="333"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" data-aos="fade-up">
+        <div class="container">
+          <h2 id="cta_title">
+            Ready to Transform Your Technology Infrastructure?
+          </h2>
+          <p id="cta_text">
+            Schedule a consultation with our enterprise solutions team to
+            discuss your specific requirements and challenges.
+          </p>
+          <a href="#contact" class="btn" id="cta_button">
+            <i class="fas fa-envelope"></i> Contact Our Team
+          </a>
+        </div>
+      </section>
+
+      <footer id="contact">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-column">
+              <a href="#" class="footer-logo" aria-label="Smart Tech Home">
+                <img
+                  src="logo.svg"
+                  alt="Smart Tech Logo"
+                  class="footer-logo-img"
+                  width="32"
+                  height="32"
+                />
+                <div class="footer-logo-text">Smart<span>Tech</span></div>
+              </a>
+              <p id="footer_about">
+                Enterprise technology solutions for the digital age. Secure.
+                Scalable. Reliable.
+              </p>
+              <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3 id="footer_company">Company</h3>
+              <ul>
+                <li><a href="#" id="footer_about_link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                <li><a href="#" id="footer_leadership"><i class="fas fa-chevron-right"></i> Leadership</a></li>
+                <li><a href="#" id="footer_careers"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                <li><a href="#" id="footer_news"><i class="fas fa-chevron-right"></i> Newsroom</a></li>
+                <li><a href="#" id="footer_partners"><i class="fas fa-chevron-right"></i> Partners</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3 id="footer_solutions">Solutions</h3>
+              <ul>
+                <li><a href="#" id="footer_cloud"><i class="fas fa-chevron-right"></i> Cloud Services</a></li>
+                <li><a href="#" id="footer_security"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                <li><a href="#" id="footer_analytics"><i class="fas fa-chevron-right"></i> Data Analytics</a></li>
+                <li><a href="#" id="footer_ai"><i class="fas fa-chevron-right"></i> AI Solutions</a></li>
+                <li>
+                  <a href="#" id="footer_digital"><i class="fas fa-chevron-right"></i> Digital Transformation</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3 id="footer_contact">Contact</h3>
+              <ul>
+                <li id="footer_address1"><i class="fas fa-building"></i> Global Headquarters</li>
+                <li id="footer_address2"><i class="fas fa-map-marker-alt"></i> 123 Enterprise Way</li>
+                <li id="footer_address3"><i class="fas fa-city"></i> San Francisco, CA 94107</li>
+                <li id="footer_phone"><i class="fas fa-phone"></i> Phone: (555) 123-4567</li>
+                <li id="footer_email"><i class="fas fa-envelope"></i> Email: enterprise@smarttech.example</li>
+              </ul>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>
+              &copy; <span id="footer_year">2023</span> Smart Tech Enterprises,
+              Inc. <span id="footer_rights">All rights reserved.</span> |
+              <a href="#" id="footer_privacy">Privacy Policy</a> |
+              <a href="#" id="footer_terms">Terms of Service</a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // Loading screen
+      window.addEventListener('load', function() {
+        const loading = document.querySelector('.loading');
+        setTimeout(() => {
+          loading.classList.add('hidden');
+        }, 500);
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+      
+      menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        const isExpanded = nav.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Theme toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function setTheme(isDark) {
+        document.documentElement.setAttribute(
+          "data-theme",
+          isDark ? "dark" : "light"
+        );
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      }
+
+      // Check for saved theme preference or use system preference
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (localStorage.getItem("theme") === null && prefersDark.matches)
+      ) {
+        setTheme(true);
+      }
+
+      // Toggle theme on button click
+      themeToggle.addEventListener("click", () => {
+        const isDark =
+          document.documentElement.getAttribute("data-theme") === "dark";
+        setTheme(!isDark);
+      });
+
+      // Listen for system theme changes
+      prefersDark.addEventListener("change", (e) => {
+        if (localStorage.getItem("theme") === null) {
+          setTheme(e.matches);
+        }
+      });
+
+      // Scroll animations
+      document.addEventListener("DOMContentLoaded", () => {
+        const aosElements = document.querySelectorAll("[data-aos]");
+
+        const animateOnScroll = () => {
+          aosElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            const isVisible = rect.top <= window.innerHeight * 0.75;
+
+            if (isVisible) el.classList.add("aos-animate");
+          });
+        };
+
+        // Throttle scroll events
+        let isScrolling;
+        window.addEventListener(
+          "scroll",
+          () => {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(animateOnScroll, 50);
+          },
+          false
+        );
+
+        // Initial check
+        animateOnScroll();
+      });
+
+      // Language switching
+      const translations = {
+        en: {
+          menu_home: "Home",
+          menu_services: "Services",
+          menu_solutions: "Solutions",
+          menu_about: "About",
+          menu_contact: "Contact",
+
+          hero_title: "Enterprise Technology Solutions",
+          hero_text:
+            "Smart Tech delivers secure, scalable technology infrastructure and digital transformation services for forward-thinking organizations.",
+          cta_consultation: "Request Consultation",
+          cta_services: "Explore Services",
+
+          services_title: "Our Technology Services",
+          services_subtitle:
+            "Comprehensive solutions designed to meet the unique challenges of modern enterprises",
+          service1_title: "Enterprise Software",
+          service1_text:
+            "Custom-built applications tailored to your business processes and workflow requirements.",
+          service1_link: "Learn more",
+          service2_title: "Cloud Infrastructure",
+          service2_text:
+            "Secure, scalable cloud solutions with 99.99% uptime and enterprise-grade reliability.",
+          service2_link: "Learn more",
+          service3_title: "Cybersecurity",
+          service3_text:
+            "End-to-end security solutions including threat detection, prevention, and response.",
+          service3_link: "Learn more",
+          service4_title: "Data Analytics",
+          service4_text:
+            "Turn complex data into actionable business intelligence with our advanced analytics platform.",
+          service4_link: "Learn more",
+          service5_title: "AI & Automation",
+          service5_text:
+            "Implement intelligent automation to streamline operations and reduce costs.",
+          service5_link: "Learn more",
+          service6_title: "Digital Transformation",
+          service6_text:
+            "Comprehensive strategy and implementation for your organization's digital future.",
+          service6_link: "Learn more",
+
+          about_title: "About Smart Tech",
+          about_text1:
+            "Founded in 2010, Smart Tech has established itself as a trusted partner for enterprise technology solutions, serving Fortune 500 companies and government agencies worldwide.",
+          about_text2:
+            "Our team of certified engineers, architects, and consultants bring decades of combined experience delivering mission-critical technology infrastructure.",
+          about_text3:
+            "Smart Tech is proud to maintain partnerships with leading technology providers including AWS, Microsoft, Google Cloud, and Cisco.",
+          stat1_label: "Enterprise Clients",
+          stat2_label: "Uptime SLA",
+          stat3_label: "Support",
+
+          cta_title: "Ready to Transform Your Technology Infrastructure?",
+          cta_text:
+            "Schedule a consultation with our enterprise solutions team to discuss your specific requirements and challenges.",
+          cta_button: "Contact Our Team",
+
+          footer_about:
+            "Enterprise technology solutions for the digital age. Secure. Scalable. Reliable.",
+          footer_company: "Company",
+          footer_about_link: "About Us",
+          footer_leadership: "Leadership",
+          footer_careers: "Careers",
+          footer_news: "Newsroom",
+          footer_partners: "Partners",
+          footer_solutions: "Solutions",
+          footer_cloud: "Cloud Services",
+          footer_security: "Cybersecurity",
+          footer_analytics: "Data Analytics",
+          footer_ai: "AI Solutions",
+          footer_digital: "Digital Transformation",
+          footer_contact: "Contact",
+          footer_address1: "Global Headquarters",
+          footer_address2: "123 Enterprise Way",
+          footer_address3: "San Francisco, CA 94107",
+          footer_phone: "Phone: (555) 123-4567",
+          footer_email: "Email: enterprise@smarttech.example",
+          footer_year: "2023",
+          footer_rights: "All rights reserved.",
+          footer_privacy: "Privacy Policy",
+          footer_terms: "Terms of Service",
+        },
+        ar: {
+          menu_home: "الرئيسية",
+          menu_services: "الخدمات",
+          menu_solutions: "الحلول",
+          menu_about: "عن الشركة",
+          menu_contact: "اتصل بنا",
+
+          hero_title: "حلول تكنولوجيا المؤسسات",
+          hero_text:
+            "تقدم Smart Tech بنية تحتية تكنولوجية آمنة وقابلة للتطوير وخدمات التحول الرقمي للمؤسسات ذات الرؤية المستقبلية.",
+          cta_consultation: "طلب استشارة",
+          cta_services: "استكشف الخدمات",
+
+          services_title: "خدماتنا التكنولوجية",
+          services_subtitle:
+            "حلول شاملة مصممة لتلبية التحديات الفريدة للمؤسسات الحديثة",
+          service1_title: "برامج المؤسسات",
+          service1_text:
+            "تطبيقات مخصصة مصممة وفقًا لعملياتك التجارية ومتطلبات سير العمل.",
+          service1_link: "المزيد",
+          service2_title: "بنية تحتية سحابية",
+          service2_text:
+            "حلول سحابية آمنة وقابلة للتطوير مع وقت تشغيل 99.99٪ وموثوقية على مستوى المؤسسات.",
+          service2_link: "المزيد",
+          service3_title: "الأمن السيبراني",
+          service3_text:
+            "حلول أمنية شاملة تشمل الكشف عن التهديدات والوقاية منها والاستجابة لها.",
+          service3_link: "المزيد",
+          service4_title: "تحليل البيانات",
+          service4_text:
+            "حول البيانات المعقدة إلى رؤى عمل قابلة للتنفيذ مع منصة التحليلات المتقدمة لدينا.",
+          service4_link: "المزيد",
+          service5_title: "الذكاء الاصطناعي والأتمتة",
+          service5_text: "نفذ الأتمتة الذكية لتبسيط العمليات وتقليل التكاليف.",
+          service5_link: "المزيد",
+          service6_title: "التحول الرقمي",
+          service6_text: "استراتيجية شاملة وتنفيذ للمستقبل الرقمي لمؤسستك.",
+          service6_link: "المزيد",
+
+          about_title: "عن Smart Tech",
+          about_text1:
+            "تأسست Smart Tech في عام 2010 كشريك موثوق به لحلول تكنولوجيا المؤسسات، حيث تخدم شركات Fortune 500 والوكالات الحكومية في جميع أنحاء العالم.",
+          about_text2:
+            "يتمتع فريقنا من المهندسين المعتمدين والمهندسين المعماريين والمستشارين بعقود من الخبرة المشتركة في تقديم بنية تحتية تكنولوجية حاسمة.",
+          about_text3:
+            "تفخر Smart Tech بالشراكة مع مزودي التكنولوجيا الرائدين بما في ذلك AWS وMicrosoft وGoogle Cloud وCisco.",
+          stat1_label: "عميل مؤسسي",
+          stat2_label: "اتفاقية مستوى الخدمة",
+          stat3_label: "دعم فني",
+
+          cta_title:
+            "هل أنت مستعد لتحويل البنية التحتية التكنولوجية الخاصة بك؟",
+          cta_text:
+            "حدد موعدًا للاستشارة مع فريق حلول المؤسسات لدينا لمناقشة متطلباتك وتحدياتك الخاصة.",
+          cta_button: "اتصل بفريقنا",
+
+          footer_about:
+            "حلول تكنولوجية للمؤسسات في العصر الرقمي. آمنة. قابلة للتطوير. موثوقة.",
+          footer_company: "الشركة",
+          footer_about_link: "عن الشركة",
+          footer_leadership: "الفريق القيادي",
+          footer_careers: "الوظائف",
+          footer_news: "الأخبار",
+          footer_partners: "الشركاء",
+          footer_solutions: "الحلول",
+          footer_cloud: "الخدمات السحابية",
+          footer_security: "الأمن السيبراني",
+          footer_analytics: "تحليل البيانات",
+          footer_ai: "حلول الذكاء الاصطناعي",
+          footer_digital: "التحول الرقمي",
+          footer_contact: "اتصل بنا",
+          footer_address1: "المقر العالمي",
+          footer_address2: "123 طريق المؤسسات",
+          footer_address3: "سان فرانسيسكو، كاليفورنيا 94107",
+          footer_phone: "الهاتف: 555 123 4567",
+          footer_email: "البريد الإلكتروني: enterprise@smarttech.example",
+          footer_year: "2023",
+          footer_rights: "جميع الحقوق محفوظة.",
+          footer_privacy: "سياسة الخصوصية",
+          footer_terms: "شروط الخدمة",
+        },
+      };
+
+      function switchLanguage(lang) {
+        document.body.dir = lang === "ar" ? "rtl" : "ltr";
+
+        // Update all translatable elements
+        Object.keys(translations[lang]).forEach((key) => {
+          const elements = document.querySelectorAll(`#${key}`);
+          if (elements.length > 0) {
+            elements.forEach((el) => {
+              el.textContent = translations[lang][key];
+            });
+          }
+        });
+
+        // Update language selector value
+        document.getElementById("languageSelect").value = lang;
+
+        // Save preference to localStorage
+        localStorage.setItem("language", lang);
+      }
+
+      // Initialize language
+      const userLang =
+        localStorage.getItem("language") ||
+        (navigator.language.startsWith("ar") ? "ar" : "en");
+      switchLanguage(userLang);
+
+      // Handle language selector change
+      document
+        .getElementById("languageSelect")
+        .addEventListener("change", (e) => {
+          switchLanguage(e.target.value);
+        });
+
+      // Update copyright year
+      document.getElementById('footer_year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
